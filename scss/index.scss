@@ -223,7 +223,7 @@ a {
     }
 }
 // 筆電
-@media screen and (min-width: 1023px) and (max-width: 1280px) {
+@media screen and (min-width: 1023px) and (max-width: 1400px) {
     .home {
         .col_1 {
             padding: 21%;
@@ -238,11 +238,114 @@ a {
         }
     }
 }
-
+//平板air
 @media screen and (min-width: 767px) and (max-width: 850px) {
+    body {
+        background: url('../img/1x/bg_ph-100.jpg') no-repeat 0 0;
+        background-size: cover;
+        // 避免下面白色區塊
+        // padding: 0 0 27vw 0;
+    }
+
     .home {
         .col_1 {
-            padding: 20%;
+            flex-direction: column;
+            align-items: center;
+            // margin: 32vw 0;
+            // margin: 42vw auto;
+
+            // logo
+            .logo {
+                width: 40vw;
+                margin: 0 0 10vw 0;
+                padding: 0;
+                border-right: 0;
+
+                // star
+                span {
+                    width: 3vw;
+                    top: -8vw;
+                    right: 7.5vw;
+                    animation: star2 2s linear 0s 1;
+
+                    @keyframes star2 {
+                        0% {
+                            transform-origin: center;
+                            transform: rotate(0deg);
+                            opacity: 0;
+                        }
+
+                        40% {
+                            transform-origin: center;
+                            transform: rotate(-180deg);
+                            opacity: 0;
+                        }
+
+                        100% {
+                            transform-origin: center;
+                            transform: translateZ(0);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            .logo::after {
+                display: none;
+            }
+
+            // 文字區
+            .txt_box {
+                padding: 0;
+                cursor: default;
+
+                // 黃色英文字
+                .y_txt_box {
+                    justify-content: center;
+                    margin: 3vw 0;
+
+                    p {
+                        font-size: 5vw;
+                        margin: 0 auto;
+                    }
+                }
+
+                // 大標
+                .M_title_box {
+                    width: 90vw;
+                    margin: 2vw 0 12vw 0;
+                }
+
+                // 小標
+                .m_title_box {
+                    flex-direction: column;
+                    align-items: center;
+
+                    .box:nth-child(1) {
+                        width: 67vw;
+                        border-right: 0;
+                        padding-bottom: 4vw;
+                        border-bottom: 0.1vw solid #f1ecec82;
+                        padding-right: 0;
+                    }
+
+                    .box:nth-child(2) {
+                        width: 67vw;
+                        margin: 5vw 0 2vw 0;
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            // 臉書
+            a {
+                cursor: pointer;
+
+                .face_box {
+                    width: 67vw;
+                    margin: 1vw auto;
+                }
+            }
         }
     }
 }
@@ -261,7 +364,7 @@ a {
             flex-direction: column;
             align-items: center;
             // margin: 32vw 0;
-            margin: 42vw auto;
+            // margin: 42vw auto;
 
             // logo
             .logo {
