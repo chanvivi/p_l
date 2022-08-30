@@ -467,9 +467,15 @@ a {
         }
     }
 }
-
+@media screen and (min-width: 530px) and (max-width: 600px) {
+    .home {
+        .col_1 {
+            padding: 14% 13%;
+        }
+    }
+}
 // =========== iphone 米你==========
-@media screen and (min-width: 376px) and (max-width: 767px) {
+@media screen and (min-width: 376px) and (max-width: 539px) {
     .home {
         .col_1 {
             padding: 58% 13%;
@@ -484,7 +490,14 @@ a {
     }
 }
 
-@media screen and (min-width: 280px) and (max-width: 360px) {
+@media screen and (min-width: 300px) and (max-width: 360px) {
+    .home {
+        .col_1 {
+            padding: 49% 10%;
+        }
+    }
+}
+@media screen and (min-width: 270px) and (max-width: 280px) {
     .home {
         .col_1 {
             padding: 62% 10%;
