@@ -1,0 +1,377 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    cursor: default;
+}
+
+// 桌機板
+.home {
+    background: url('../img/1x/bg-100.jpg') no-repeat 0 0;
+    background-size: cover;
+    // 白線處理
+    // background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+    .col_1 {
+        display: flex;
+        padding: 13%;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+        // logo
+        .logo {
+            width: 21.7vw;
+            padding-right: 4vw;
+            margin: 4vw 0;
+            position: relative;
+            display: flex;
+            // border-right: 0.2vw solid #f1ecec82;
+
+            // star
+            span {
+                position: absolute;
+                width: 1.5vw;
+                top: -4vw;
+                right: 6.5vw;
+                animation: star2 2s linear 0s 1;
+
+                @keyframes star2 {
+                    0% {
+                        opacity: 0;
+                    }
+
+                    80% {
+                        transform-origin: center;
+                        transform: rotate(-90deg);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform-origin: center;
+                        transform: translateZ(0);
+                        opacity: 1;
+                    }
+                }
+
+                img {
+                    animation: star 3s 0s ease-in-out infinite;
+                    // animation:動畫名稱 播放時間 延遲執行的時間 速度 次數 方向 填充模式 播放狀態(要播放還是暫停)
+                    // animation: name duration timing-function delay iteration-count direction fill-mode;
+
+                    @keyframes star {
+                        50% {
+                            filter: drop-shadow(0 0 0.75rem rgb(255, 254, 254));
+                        }
+                    }
+                }
+            }
+        }
+
+        .logo::after {
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 0;
+            background-color: #f1ecec82;
+            width: 0.1vw;
+            height: 12vw;
+            display: block;
+            animation: line 1s 0s linear;
+
+            @keyframes line {
+                0% {
+                    opacity: 0;
+                    height: 0%;
+                    top: 12vw;
+                }
+
+                100% {
+                    opacity: 1;
+                    height: 100%;
+                    top: 0;
+                }
+            }
+        }
+
+        // 文字區
+        .txt_box {
+            padding-left: 4vw;
+
+            // 黃色英文字
+            .y_txt_box {
+                display: flex;
+                justify-content: center;
+
+                p {
+                    position: relative;
+                    display: inline-block;
+                    // font-family: 'Tenor Sans';
+                    font-family: 'Tenor Sans', sans-serif;
+                    font-size: 2.1vw;
+                    font-weight: 500;
+                    letter-spacing: 0.1vw;
+                    text-transform: uppercase;
+                    margin: 0 5vw 0 0;
+
+                    @keyframes shine {
+
+                        // 控制閃光出現
+                        70% {
+                            background-position: 110% 0%, 0 0;
+                        }
+
+                        100% {
+                            background-position: -10% 0%, 0 0;
+                        }
+                    }
+                }
+
+                [data-gold] {
+                    color: #ac733c; //fallback solid color
+
+                    @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+                        color: transparent;
+                        background-image: linear-gradient(to right, transparent 0%, transparent 45%, white 50%, transparent 55%, transparent 100%), linear-gradient(90deg, #c78c48, #cf9147 9.4%, #cf9348 9.4%, #b2763e 33.6%, #ad743c 35.7%, #ac723d 46.9%, #b0773d 51.7%, #b0793e 52.1%, #c4914c 64.6%, #c99750 68.5%, #ce9e54 73.2%, #f4d188);
+                        background-position: 110% 0%, 0 0;
+                        background-size: 200% auto, auto;
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        animation: shine 4s linear infinite normal 0s;
+                        // animation-duration: 5s;
+                        // animation-delay: 0s;
+
+                    }
+
+                    &:before {
+                        content: attr(data-gold);
+                        color: #f0e7d4;
+                        position: absolute;
+                        z-index: -1;
+                        top: -.05vw;
+                        left: 0px;
+                        text-shadow: rgba(black, 1) 0px .08vw 12px;
+                    }
+
+                    @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+                        &:after {
+                            content: attr(data-gold);
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background-image: linear-gradient(to bottom, transparent 0%, transparent 48%, rgba(#621000, .5) 50%, transparent 75%);
+                            -webkit-background-clip: text;
+                            background-clip: text;
+                        }
+                    }
+                }
+
+            }
+
+            // 大標
+            .M_title_box {
+                width: 54.4vw;
+                margin: 2vw 0;
+            }
+
+            // 小標
+            .m_title_box {
+                display: flex;
+                margin: 2vw 0 2vw 0;
+
+                .box:nth-child(1) {
+                    width: 27vw;
+                    // 白線
+                    border-right: 0.1vw solid #f1ecec82;
+                    padding-right: 3vw;
+                }
+
+                .box:nth-child(2) {
+                    width: 27vw;
+                    padding-left: 3vw;
+                }
+            }
+        }
+
+        // 臉書
+        a {
+            cursor: pointer;
+
+            .face_box {
+                width: 30.5vw;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+// 筆電
+@media screen and (min-width: 1023px) and (max-width: 1280px) {
+    .home {
+        .col_1 {
+            padding: 21%;
+        }
+    }
+}
+// 平板
+@media screen and (min-width: 849px) and (max-width: 1024px) {
+    .home {
+        .col_1 {
+            padding: 20%;
+        }
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 850px) {
+    .home {
+        .col_1 {
+            padding: 20%;
+        }
+    }
+}
+
+// 手機板
+@media screen and (max-width:768px) {
+    body {
+        background: url('../img/1x/bg_ph-100.jpg') no-repeat 0 0;
+        background-size: cover;
+        // 避免下面白色區塊
+        // padding: 0 0 27vw 0;
+    }
+
+    .home {
+        .col_1 {
+            flex-direction: column;
+            align-items: center;
+            // margin: 32vw 0;
+            margin: 42vw auto;
+
+            // logo
+            .logo {
+                width: 40vw;
+                margin: 0 0 10vw 0;
+                padding: 0;
+                border-right: 0;
+
+                // star
+                span {
+                    width: 3vw;
+                    top: -8vw;
+                    right: 7.5vw;
+                    animation: star2 2s linear 0s 1;
+
+                    @keyframes star2 {
+                        0% {
+                            transform-origin: center;
+                            transform: rotate(0deg);
+                            opacity: 0;
+                        }
+
+                        40% {
+                            transform-origin: center;
+                            transform: rotate(-180deg);
+                            opacity: 0;
+                        }
+
+                        100% {
+                            transform-origin: center;
+                            transform: translateZ(0);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            .logo::after {
+                display: none;
+            }
+
+            // 文字區
+            .txt_box {
+                padding: 0;
+                cursor: default;
+
+                // 黃色英文字
+                .y_txt_box {
+                    justify-content: center;
+                    margin: 3vw 0;
+
+                    p {
+                        font-size: 5vw;
+                        margin: 0 auto;
+                    }
+                }
+
+                // 大標
+                .M_title_box {
+                    width: 90vw;
+                    margin: 2vw 0 12vw 0;
+                }
+
+                // 小標
+                .m_title_box {
+                    flex-direction: column;
+                    align-items: center;
+
+                    .box:nth-child(1) {
+                        width: 67vw;
+                        border-right: 0;
+                        padding-bottom: 4vw;
+                        border-bottom: 0.1vw solid #f1ecec82;
+                        padding-right: 0;
+                    }
+
+                    .box:nth-child(2) {
+                        width: 67vw;
+                        margin: 5vw 0 2vw 0;
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            // 臉書
+            a {
+                cursor: pointer;
+
+                .face_box {
+                    width: 67vw;
+                    margin: 1vw auto;
+                }
+            }
+        }
+    }
+}
+
+// =========== iphone 米你==========
+@media screen and (min-width: 361px) and (max-width: 430px) {
+    .home {
+        .col_1 {
+            padding: 20%;
+        }
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .home {
+        .col_1 {
+            padding: 20%;
+        }
+    }
+}
