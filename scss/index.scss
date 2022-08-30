@@ -222,9 +222,15 @@ a {
         }
     }
 }
-
+@media screen and (min-width: 1199px) and (max-width: 1400px) {
+    .home {
+        .col_1 {
+            padding: 13% 0%;
+        }
+    }
+}
 // 筆電
-@media screen and (min-width: 1023px) and (max-width: 1400px) {
+@media screen and (min-width: 1023px) and (max-width: 1200px) {
     .home {
         .col_1 {
             padding: 21% 0%;
