@@ -32,7 +32,7 @@ a {
 
     .col_1 {
         display: flex;
-        padding: 13%;
+        padding: 14.5% 13%;
         justify-content: center;
         align-content: center;
         align-items: center;
@@ -234,7 +234,7 @@ a {
 @media screen and (min-width: 849px) and (max-width: 1024px) {
     .home {
         .col_1 {
-            padding: 20%;
+            padding: 19% 0%;
         }
     }
 }
